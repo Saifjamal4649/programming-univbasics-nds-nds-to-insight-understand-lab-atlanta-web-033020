@@ -5,20 +5,19 @@ def directors_database
   @_db ||= YAML.load(rot13.call(File.open("directors_db").read.to_s))
   
 end
-require 'directors_database'
-# Call the method directors_database to retrieve the NDS
 
-directors_database
+
 def pretty_print_nds(nds)
   # Change the code below to pretty print the nds with pp
   nil
- pp nds
+  pp nds
 end
 
 def print_first_directors_movie_titles
-  index = 0
-  while index < directors_database[0][:movies].length do
-    puts directors_database[0][:movies][index][:title]
-    index += 1
+  i = 0
+  movies = directors_database[0][:movies]
+  while i < movies.count do
+    puts movies[i][:title]
+    i += 1
   end
 end
