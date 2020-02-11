@@ -17,3 +17,4 @@ def print_first_directors_movie_titles
   db = db[0][:movies].each{|i|
     puts i[:title]
   }
+end
